@@ -1,0 +1,16 @@
+.word {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 20px;
+	font-size: 6rem;
+	text-transform: uppercase;
+	gap: 0.5rem;
+	color: #333;
+}
+
+.letter {
+	border-bottom: 0.1em solid #333;
+	width: 1em;
+	text-align: center;
+}

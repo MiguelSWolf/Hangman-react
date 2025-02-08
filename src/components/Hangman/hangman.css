@@ -1,0 +1,93 @@
+:root {
+	--man-width: 0.75rem;
+	--man-color: black;
+	--member-width: 5rem;
+	--body-height: 8rem;
+	--head-size: 3rem;
+
+	--hang-width: 0.5rem;
+	--hang-color: brown;
+
+	--container: 340px;
+}
+
+.hangman {
+	position: relative;
+	width: var(--container);
+}
+.pole,
+.beam,
+.rope {
+	background-color: var(--hang-color);
+}
+.pole {
+	width: var(--hang-width);
+	height: 350px;
+	margin: 0 auto;
+}
+.beam {
+	width: 200px;
+	margin: auto;
+	height: var(--hang-width);
+}
+.beam.short {
+	width: calc(var(--container) / 2);
+	margin-left: calc(var(--container) / 2 - var(--hang-width) / 2);
+}
+.rope {
+	width: var(--hang-width);
+	height: 50px;
+	margin: 0 auto;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.man {
+	position: absolute;
+	top: 50px;
+	right: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	transform: translateX(50%);
+}
+
+.head {
+	width: var(--head-size);
+	height: var(--head-size);
+	border-radius: 50%;
+	border: var(--man-width) solid var(--man-color);
+}
+.leg,
+.arm {
+	background: var(--man-color);
+	width: var(--member-width);
+	height: var(--man-width);
+}
+
+.body {
+	background: var(--man-color);
+	width: var(--man-width);
+	height: var(--body-height);
+}
+
+.arm {
+	position: absolute;
+	top: calc(var(--head-size) + var(--man-width) * 2);
+}
+
+.leg {
+	position: absolute;
+	top: calc(var(--body-height) + var(--head-size) + var(--man-width));
+}
+.is-right {
+	left: calc(var(--member-width) / 2);
+	transform: rotate(45deg);
+	transform-origin: left top;
+}
+.is-left {
+	right: calc(var(--member-width) / 2);
+	transform: rotate(315deg);
+	transform-origin: right top;
+}
